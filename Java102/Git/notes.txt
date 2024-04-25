@@ -1,0 +1,18 @@
+git add . //useable
+git commit --amend //yeni olursutrmak yerine son commiti gunceller
+git log // self exp
+git log -n1 //son 1 logu verir
+git revert {commit id} // en son committeki degisiklikleri siler ve bunu sildigi hakkinda yeni bi commit olusturur
+git reset --hard {commit id} // !!!!!! DIKKAT SUDO SEVIYESINDE TEHLIKELI. verilen id'deki committen sonra atilan her seyi siler, commitler dahil
+git branch // shows existing branchs
+git branch {name} // creates branch
+git checkout {branchName} // branch degistirir
+git checkout -b {branchName} // creates and changes to branch
+git branch -D {branchName} // deletes branch
+git stash // kaydediyo ama ne bu aq
+git stash pop // son kaydi getiriyo
+git stash apply {stash id eg. stash@{0}} // spesifik olarak id ile secmek icin. doesnt work for me. 
+git merge {branchName} // o an bulunan branch ile belirtilen branchi birlestirir
+git merge --squash {branchName} // yine birlestirir ama commit etmez
+git rebase {branchName} //idfk kinda like merge or stash or wtf
+git merge --abort
