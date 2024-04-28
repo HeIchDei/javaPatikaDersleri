@@ -39,7 +39,7 @@ replacement_cost = (
 	**SELECT** **MIN**(replacement_cost) **FROM** film
 )
 
-4. **SELECT** * **FROM** payment
-**WHERE** amount = (
-	**SELECT** **MAX**(amount) **FROM** payment
-)
+4. SELECT customer.first_name, customer.last_name, COUNT(*) AS AlisverisSayisi FROM customer
+INNER JOIN payment ON customer.customer_id = payment.customer_id
+GROUP BY customer.customer_id
+ORDER BY AlisverisSayisi DESC
