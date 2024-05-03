@@ -17,5 +17,23 @@ public class Patika {
 		// sub-sub-subclasses
 		LabAsistani la1 = new LabAsistani("LABAS", "1","2","3","4","5");
 
+		// Method overloading
+		//o1.giris("10:00","18:00");
+
+		// Method overriding
+		//o1.giris();
+
+
+		// Polymorphism (Çok biçimlilik)
+		//o1.giris();
+		//a1.giris();
+		//c1.giris();
+		//m1.giris();
+
+		Calisan[] loginUser = {c1,a1,m1,o1};
+		Calisan.girisYapanlar(loginUser);
+
+
+
 	}
 }

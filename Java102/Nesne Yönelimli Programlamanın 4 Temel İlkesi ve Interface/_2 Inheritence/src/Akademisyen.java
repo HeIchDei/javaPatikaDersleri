@@ -30,5 +30,10 @@ public class Akademisyen extends Calisan {
 		System.out.println(this.getAdSoyad() + " derse giris yapti.");
 	}
 
+	@Override
+	public void giris(){
+		System.out.println(this.getAdSoyad() + " akademisyeni A kapisindan giris yapti.");
+	}
+
 
 }
