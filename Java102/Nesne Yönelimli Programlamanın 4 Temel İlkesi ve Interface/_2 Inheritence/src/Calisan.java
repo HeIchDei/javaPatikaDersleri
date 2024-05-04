@@ -1,4 +1,4 @@
-public class Calisan {
+public abstract class Calisan {
 	private String adSoyad;
 	private String telefon;
 	private String eposta;
@@ -37,13 +37,13 @@ public class Calisan {
 		System.out.println(this.adSoyad + " Universiteye giris yapti.");
 	}
 
-	public void giris(String girisSaati){
+	/*public void giris(String girisSaati){
 		System.out.println(this.getAdSoyad() + " " + girisSaati + " Saatinde giris yapti");
 	}
 
 	public void giris(String girisSaati, String cikisSaati){
 		System.out.println(this.getAdSoyad() + " " + girisSaati + " Saatinde giris yapti ve " + cikisSaati + " saatinde cikis yapacak");
-	}
+	}*/
 
 	public void cikis(){
 		System.out.println(this.adSoyad + " Universiteden cikis yapti.");

@@ -19,6 +19,11 @@ public class OgretimGorevlisi extends Akademisyen{
 		System.out.println(this.getAdSoyad() + "öğretim görevlisi B kapısından giriş yaptı");
 	}
 
+	@Override
+	public void derseGir(String saat){
+		System.out.println(this.getAdSoyad() + " ogretim gorevlisi derse " + saat + " giris yapti!");
+	}
+
 
 
 }
