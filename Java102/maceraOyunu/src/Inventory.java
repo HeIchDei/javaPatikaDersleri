@@ -2,12 +2,16 @@ public class Inventory {
 
     private Weapon weapon;
     private Armor armor;
-    private AItem[] AItems;
+    private boolean food;
+    private boolean firewood;
+    private boolean water;
 
     public Inventory() {
         this.weapon = new Weapon(-1, "Yumruk",0,0);
         this.armor = new Armor(-1, "Paçavra",0,0);
-        AItems = new AItem[3];
+        this.food = false;
+        this.firewood = false;
+        this.water = false;
     }
 
 
@@ -28,11 +32,27 @@ public class Inventory {
         this.armor = armor;
     }
 
-    public AItem[] getItems() {
-        return AItems;
+    public boolean isFood() {
+        return food;
     }
 
-    public void setItems(AItem[] AItems) {
-        this.AItems = AItems;
+    public void setFood(boolean food) {
+        this.food = food;
+    }
+
+    public boolean isFirewood() {
+        return firewood;
+    }
+
+    public void setFirewood(boolean firewood) {
+        this.firewood = firewood;
+    }
+
+    public boolean isWater() {
+        return water;
+    }
+
+    public void setWater(boolean water) {
+        this.water = water;
     }
 }

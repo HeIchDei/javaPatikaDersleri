@@ -13,7 +13,7 @@ public class Game {
 		System.out.println("Macera oyununa hoşgeldiniz!");
 		System.out.print("Lütfen bir isim giriniz: ");
 		String playerName = inp.nextLine();
-		Player player = new Player(playerName);
+		this.player = new Player(playerName);
 		System.out.println("Sayın " + player.getName() + ". Bu karanlık ve sisli adaya hoş geldin!");
 		System.out.println("Burda yaşanan her şey gerçek!\n");
 
@@ -27,6 +27,10 @@ public class Game {
          */
 		Location location;
 		while (true) {
+			if(this.player.isWin()){
+				break;
+			}
+
 			System.out.println("================================");
 			player.printStatus();
 			System.out.println("\n1 - Ev");
@@ -34,6 +38,7 @@ public class Game {
 			System.out.println("3 - Mağara");
 			System.out.println("4 - Orman");
 			System.out.println("5 - Nehir");
+			System.out.println("6 - Maden");
 			System.out.println("0 - Çıkış");
 			System.out.print("Gitmek istediğin yeri seç: ");
 			int selectLoc = inp.nextInt();
@@ -47,32 +52,34 @@ public class Game {
 				case 2:
 					location = new Market(player);
 					break;
+
 				case 3:
-					if (!Cave.hasBeenIn) {
+					if (!this.player.getInventory().isFood()) {
 						location = new Cave(player);
-						Cave.hasBeenIn = true;
 					} else {
 						System.out.println("Burayı çoktan temizledin.");
 						continue;
 					}
 					break;
+
 				case 4:
-					if (!Forest.hasBeenIn) {
+					if (!this.player.getInventory().isFirewood()) {
 						location = new Forest(player);
-						Forest.hasBeenIn = true;
 					} else {
 						System.out.println("Burayı çoktan temizledin.");
 						continue;
 					}
 					break;
 				case 5:
-					if (!River.hasBeenIn) {
+					if (!this.player.getInventory().isWater()) {
 						location = new River(player);
-						River.hasBeenIn = true;
 					} else {
 						System.out.println("Burayı çoktan temizledin.");
 						continue;
 					}
+					break;
+				case 6:
+					location = new Mine(player);
 					break;
 				default:
 					System.out.println("Hatalı girdi!");
@@ -82,6 +89,7 @@ public class Game {
 				System.out.println("Byee");
 				break;
 			}
+
 			if (!location.onLocation()) {
 				System.out.println("Öldün! İyi denemeydi.");
 				break;

@@ -11,10 +11,12 @@ public class Player {
     private String charName;
     private Inventory inventory;
     private Scanner inp = new Scanner(System.in);
+    private boolean isWin;
 
     public Player(String name){
         this.name = name;
         this.inventory = new Inventory();
+        this.isWin = false;
     }
 
     public void selectChar(){
@@ -150,5 +152,13 @@ public class Player {
 
     public void setMaxHp(int maxHp) {
         this.maxHp = maxHp;
+    }
+
+    public boolean isWin() {
+        return isWin;
+    }
+
+    public void setWin(boolean win) {
+        isWin = win;
     }
 }

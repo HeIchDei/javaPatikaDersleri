@@ -4,7 +4,27 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2eb8ed3a-6b0f-4c99-85ee-b9283b9fb83f" name="Changes" comment="" />
+    <list default="true" id="54c417ce-17bf-42dc-a1fd-b41995b7083b" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/maceraOyunu/AAATestClass.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/maceraOyunu/AAATestClass.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/maceraOyunu/BattleLoc.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/maceraOyunu/BattleLoc.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/maceraOyunu/Cave.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/maceraOyunu/Cave.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/maceraOyunu/Forest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/maceraOyunu/Forest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/maceraOyunu/Game.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/maceraOyunu/Game.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/maceraOyunu/Inventory.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/maceraOyunu/Inventory.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/maceraOyunu/River.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/maceraOyunu/River.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AAATestClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AAATestClass.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AItem.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/BattleLoc.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/BattleLoc.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Cave.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Cave.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DangerousLoc.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Forest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Forest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/House.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/House.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Inventory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Inventory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Player.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/River.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/River.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -13,68 +33,38 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_BRANCH_BY_REPOSITORY">
-      <map>
-<<<<<<< HEAD
-        <entry key="$PROJECT_DIR$/../.." value="ilkHamle" />
-=======
-        <entry key="$PROJECT_DIR$/../.." value="main" />
->>>>>>> ilkHamle
-      </map>
-    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
   </component>
   <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
   &quot;associatedIndex&quot;: 5
 }</component>
-  <component name="ProjectId" id="2g3WLJqucVLxdZNatbyNIKcpnb2" />
+  <component name="ProjectId" id="2gQP6ebjGvwEUcYFaPmxyhFhTPv" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-<<<<<<< HEAD
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
-    &quot;Attach to process.pid 5118.executor&quot;: &quot;ProcessAttachDebug&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;Settings.Markdown&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
-  }
-}</component>
-=======
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "Application.Main.executor": "Run",
-    "Attach to process.pid 5118.executor": "ProcessAttachDebug",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "ilkHamle",
+    "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "/home/heichdei/IdeaProjects/firstApiTest",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "Settings.Markdown",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
->>>>>>> ilkHamle
   <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
@@ -85,10 +75,6 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Main" />
-        <item itemvalue="Application.Main" />
-        <item itemvalue="Application.Main" />
-        <item itemvalue="Application.Main" />
         <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
@@ -104,37 +90,20 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="2eb8ed3a-6b0f-4c99-85ee-b9283b9fb83f" name="Changes" comment="" />
-      <created>1714926684587</created>
+      <changelist id="54c417ce-17bf-42dc-a1fd-b41995b7083b" name="Changes" comment="" />
+      <created>1715625846913</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1714926684587</updated>
-      <workItem from="1714926685658" duration="2171000" />
-      <workItem from="1714929056672" duration="3289000" />
-      <workItem from="1715029506521" duration="11796000" />
-      <workItem from="1715186029326" duration="3488000" />
-      <workItem from="1715193508767" duration="66000" />
-      <workItem from="1715193580201" duration="34000" />
-      <workItem from="1715193618822" duration="333000" />
-      <workItem from="1715196018418" duration="489000" />
-      <workItem from="1715199003271" duration="7812000" />
-      <workItem from="1715269148807" duration="13242000" />
-      <workItem from="1715551522153" duration="990000" />
-      <workItem from="1715552517873" duration="695000" />
-      <workItem from="1715624007484" duration="327000" />
-      <workItem from="1715625022178" duration="73000" />
-<<<<<<< HEAD
-=======
-      <workItem from="1715625421835" duration="208000" />
->>>>>>> ilkHamle
+      <updated>1715625846913</updated>
+      <workItem from="1715625848281" duration="618000" />
+      <workItem from="1715626656373" duration="2102000" />
+      <workItem from="1715633039571" duration="95000" />
+      <workItem from="1715633152371" duration="5137000" />
+      <workItem from="1715643767788" duration="1350000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
-  </component>
-  <component name="XSLT-Support.FileAssociations.UIState">
-    <expand />
-    <select />
   </component>
 </project>

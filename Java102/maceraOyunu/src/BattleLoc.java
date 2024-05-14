@@ -5,13 +5,15 @@ public abstract class BattleLoc extends Location {
 	private Monster monster;
 	private String award;
 	private int maxMonster;
-	public static boolean hasBeenIn = false;
+	private Random rand = new Random();
+	private int fightNum;
 
 	public BattleLoc(Player player, String name, Monster monster, String award, int maxMonster) {
 		super(player, name);
 		this.monster = monster;
 		this.award = award;
 		this.maxMonster = maxMonster;
+		this.fightNum = 0;
 	}
 
 	@Override
@@ -21,13 +23,22 @@ public abstract class BattleLoc extends Location {
 		System.out.println("Bulunduğun yer: " + this.getName());
 		System.out.println("Dikkatli ol! Burda " + monsterNum + " adet " + monsterName + " yaşıyor!");
 		System.out.print("<S>avaş veya <K>aç: ");
-		String selectCase = inp.nextLine();
-		selectCase = selectCase.toLowerCase();
+		String selectCase = inp.nextLine().toLowerCase();
 		if (selectCase.equals("s")) {
-			if(combat(monsterNum)){
-				System.out.println("Bölgedeki tüm düşmanları yendin!");
+			if (combat(monsterNum)) {
+				if (this.fightNum == monsterNum) {
+					System.out.println("Bölgedeki tüm düşmanları yendin!");
+					if(this.getName().equals("Mağara")){
+						this.getPlayer().getInventory().setFood(true);
+					}
+					switch (this.getName()) {
+						case "Mağara" -> this.getPlayer().getInventory().setFood(true);
+						case "Orman" -> this.getPlayer().getInventory().setFirewood(true);
+						case "Nehir" -> this.getPlayer().getInventory().setWater(true);
+					}
+				}
 				return true;
-			}else{
+			} else {
 				return false;
 			}
 		}
@@ -36,11 +47,14 @@ public abstract class BattleLoc extends Location {
 	}
 
 	public boolean combat(int numberOfMonsters) {
-		int fightNum = 0;
+		this.fightNum = 0;
 		boolean isEscape = false;
 		for (int i = 1; i <= numberOfMonsters; i++) {
 			this.getMonster().setHp(this.getMonster().getMaxHp());
-			while (this.getPlayer().getHp() > 0 && this.getMonster().getHp() > 0 && !isEscape) {
+			if(isEscape){
+				break;
+			}
+			while (this.getPlayer().getHp() > 0 && this.getMonster().getHp() > 0) {
 				System.out.println();
 				playerStats();
 				System.out.println();
@@ -58,7 +72,10 @@ public abstract class BattleLoc extends Location {
 						break;
 					}
 
-					int monsterDmg = this.getMonster().getDmg() - this.getPlayer().getArmor().getDef();
+					if (this.monster.getId() == 4) {
+						this.monster.setDmg(rand.nextInt(3, 6));
+					}
+					int monsterDmg = (this.getMonster().getDmg()) - this.getPlayer().getArmor().getDef();
 					if (monsterDmg < 0) {
 						monsterDmg = 0;
 					}
@@ -68,18 +85,19 @@ public abstract class BattleLoc extends Location {
 						return false;
 					}
 
-				}else{
+				} else {
 					isEscape = true;
+					break;
 				}
 
 			}
-			fightNum += 1;
+			this.fightNum += 1;
 		}
 
 		return true;
 	}
 
-	public void getMonsterKillMoneyAward(){
+	public void getMonsterKillMoneyAward() {
 		int winnedMoney = this.getMonster().getMoneyToDrop();
 		int totalMoney = this.getPlayer().getMoney() + winnedMoney;
 		System.out.println(winnedMoney + " altın kazandın!");
@@ -134,5 +152,13 @@ public abstract class BattleLoc extends Location {
 
 	public void setMaxMonster(int maxMonster) {
 		this.maxMonster = maxMonster;
+	}
+
+	public int getFightNum() {
+		return fightNum;
+	}
+
+	public void setFightNum(int fightNum) {
+		this.fightNum = fightNum;
 	}
 }
