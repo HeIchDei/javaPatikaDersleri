@@ -35,6 +35,7 @@ public abstract class BattleLoc extends Location {
 						case "Mağara" -> this.getPlayer().getInventory().setFood(true);
 						case "Orman" -> this.getPlayer().getInventory().setFirewood(true);
 						case "Nehir" -> this.getPlayer().getInventory().setWater(true);
+						case "Maden" -> getSnakeTreasure();
 					}
 				}
 				return true;
@@ -62,28 +63,44 @@ public abstract class BattleLoc extends Location {
 				System.out.println("<S>aldır veya <K>aç");
 				String selectCombat = inp.nextLine().toLowerCase();
 				if (selectCombat.equals("s")) {
-					int monsterHp = this.getMonster().getHp();
 					int playerDmg = this.getPlayer().getTotalDmg();
-					this.getMonster().setHp(monsterHp - playerDmg);
-					System.out.println(this.getPlayer().getTotalDmg() + " hasar vurdun!");
-					if (this.getMonster().getHp() <= 0) {
-						System.out.println("Canavar öldü!");
-						getMonsterKillMoneyAward();
-						break;
-					}
-
-					if (this.monster.getId() == 4) {
-						this.monster.setDmg(rand.nextInt(3, 6));
-					}
+					int playerHp = this.getPlayer().getHp();
+					int monsterHp = this.getMonster().getHp();
 					int monsterDmg = (this.getMonster().getDmg()) - this.getPlayer().getArmor().getDef();
 					if (monsterDmg < 0) {
 						monsterDmg = 0;
 					}
-					int playerHp = this.getPlayer().getHp();
-					this.getPlayer().setHp(playerHp - monsterDmg);
-					if (this.getPlayer().getHp() <= 0) {
-						return false;
+
+					// ------- BATTLE AREA ------- //
+					double attackOrder = Math.random()*100;
+					if(attackOrder < 50){
+						this.getMonster().setHp(monsterHp - playerDmg);
+						System.out.println(this.getPlayer().getTotalDmg() + " hasar vurdun!");
+						if (this.getMonster().getHp() <= 0) {
+							System.out.println("Canavar öldü!");
+							getMonsterKillMoneyAward();
+							break;
+						}
+
+						this.getPlayer().setHp(playerHp - monsterDmg);
+						if (this.getPlayer().getHp() <= 0) {
+							return false; // DEATH
+						}
+					} else{
+						this.getPlayer().setHp(playerHp - monsterDmg);
+						if (this.getPlayer().getHp() <= 0) {
+							return false; // DEATH
+						}
+
+						this.getMonster().setHp(monsterHp - playerDmg);
+						System.out.println(this.getPlayer().getTotalDmg() + " hasar vurdun!");
+						if (this.getMonster().getHp() <= 0) {
+							System.out.println("Canavar öldü!");
+							getMonsterKillMoneyAward();
+							break;
+						}
 					}
+					// ------ BATTLE AREA END ------ //
 
 				} else {
 					isEscape = true;
@@ -97,11 +114,76 @@ public abstract class BattleLoc extends Location {
 		return true;
 	}
 
+	public void getSnakeTreasure() {
+		double randNum = Math.random() * 100;
+
+		if (randNum < 15) { //15%
+			getSnakeWeapon();
+		} else if(randNum < 30) { //15%
+			getSnakeArmor();
+		}else if(randNum < 55){
+			getSnakeMoney();
+		}else{
+			System.out.println("Yılanlardan herhangi bir şey düşmedi.");
+		}
+
+	}
+
+	private void getSnakeMoney(){
+		double randNumAlt = Math.random() * 100;
+		int money;
+		if(randNumAlt < 20){
+			money = 10;
+		}
+		if(randNumAlt < 50){
+			money = 5;
+		}else{
+			money = 1;
+		}
+		this.getPlayer().addMoney(this.getPlayer().getMoney());
+		System.out.println(money + " altın kazandın!");
+	}
+
+	private void getSnakeArmor() {
+		int id;
+		double randNumAlt = Math.random() * 100;
+		if (randNumAlt < 20) {
+			id = 1;
+		} else if (randNumAlt < 50) {
+			id = 2;
+		} else {
+			id = 3;
+		}
+		Armor newArmor = Armor.getArmorObjByID(id);
+		if(this.getPlayer().getArmor().getId() < newArmor.getId()){
+			this.getPlayer().getInventory().setArmor(newArmor);
+		}
+		System.out.println(newArmor.getName() + " kazandın!");
+
+	}
+
+	private void getSnakeWeapon() {
+		int id;
+		double randNumAlt = Math.random() * 100;
+		if (randNumAlt < 20) {
+			id = 1;
+		} else if (randNumAlt < 50) {
+			id = 2;
+		} else {
+			id = 3;
+		}
+		Weapon newWeapon = Weapon.getWeaponObjByID(id);
+		if(this.getPlayer().getWeapon().getId() < newWeapon.getId()){
+			this.getPlayer().getInventory().setWeapon(newWeapon);
+		}
+		System.out.println(newWeapon.getName() + " kazandın!");
+
+	}
+
 	public void getMonsterKillMoneyAward() {
 		int winnedMoney = this.getMonster().getMoneyToDrop();
-		int totalMoney = this.getPlayer().getMoney() + winnedMoney;
 		System.out.println(winnedMoney + " altın kazandın!");
-		this.getPlayer().setMoney(totalMoney);
+		this.getPlayer().addMoney(winnedMoney);
 	}
 
 	public void monsterStats(int i) {

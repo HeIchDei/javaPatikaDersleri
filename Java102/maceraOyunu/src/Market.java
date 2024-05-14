@@ -60,8 +60,7 @@ public class Market extends SafeLoc {
 				} else {
 					// Satin almanin gerceklestigi alan
 					System.out.println(selectedWeapon.getName() + " satın alındı!");
-					int balance = this.getPlayer().getMoney() - selectedWeapon.getPrice();
-					this.getPlayer().setMoney(balance);
+					this.getPlayer().takeMoney(selectedWeapon.getPrice());
 					System.out.println("Kalan paranız: " + this.getPlayer().getMoney());
 					Weapon previousWeapon = this.getPlayer().getInventory().getWeapon();
 					this.getPlayer().getInventory().setWeapon(selectedWeapon);
@@ -97,8 +96,7 @@ public class Market extends SafeLoc {
 				} else {
 					// Satin almanin gerceklestigi alan
 					System.out.println(selectedArmor.getName() + " satın alındı!");
-					int balance = this.getPlayer().getMoney() - selectedArmor.getPrice();
-					this.getPlayer().setMoney(balance);
+					this.getPlayer().takeMoney(selectedArmor.getPrice());
 					System.out.println("Kalan paranız: " + this.getPlayer().getMoney());
 					Armor previousArmor = this.getPlayer().getInventory().getArmor();
 					this.getPlayer().getInventory().setArmor(selectedArmor);

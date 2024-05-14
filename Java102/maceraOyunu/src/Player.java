@@ -20,7 +20,7 @@ public class Player {
     }
 
     public void selectChar(){
-        GameChar[] charList = {new Samurai(), new Knight(), new Archer(), new AAATestClass()};
+        GameChar[] charList = {new Samurai(), new Knight(), new Archer()};
 
         System.out.println("-------------------------------------------------------------------");
         for(GameChar gameChar : charList){
@@ -40,9 +40,6 @@ public class Player {
                 break;
             case 3:
                 this.gameChar = new Archer();
-                break;
-            case 4:
-                this.gameChar = new AAATestClass();
                 break;
             default:
                 this.gameChar = new Knight();
@@ -128,6 +125,14 @@ public class Player {
 
     public void setMoney(int money) {
         this.money = money;
+    }
+
+    public void addMoney(int money) {
+        this.money += money;
+    }
+
+    public void takeMoney(int money){
+        this.money -= money;
     }
 
     public Inventory getInventory() {

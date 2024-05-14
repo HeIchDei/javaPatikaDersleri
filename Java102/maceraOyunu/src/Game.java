@@ -86,7 +86,7 @@ public class Game {
 					continue;
 			}
 			if (location == null) {
-				System.out.println("Byee");
+				System.out.println("Korkusuz bir maceracı olduğunu düşünmüştüm, yazık oldu.");
 				break;
 			}
 
