@@ -73,13 +73,73 @@ public class MyList<T> {
 
 	public String toString() {
 		String str = "[";
-		str += this.arr[0];
+		if (arr[0] != null) {
+			str += this.arr[0];
+		}
 		for (int i = 1; i < capacity; i++) {
 			if (arr[i] != null) {
 				str += "," + this.arr[i];
 			}
 		}
 		return str + "]";
+	}
+
+	public int indexOf(T data) {
+		for (int i = 0; i < capacity; i++) {
+			if (this.arr[i] != null) {
+				if (this.arr[i].equals(data)) {
+					return i;
+				}
+			}
+		}
+		return -1;
+	}
+
+	public int lastIndexOf(T data) {
+		for (int i = cursor - 1; i >= 0; i--) {
+			if (this.arr[i].equals(data)) {
+				return i;
+			}
+		}
+		return -1;
+	}
+
+	public boolean isEmpty() {
+		for (T i : this.arr) {
+			if (i != null) {
+				return false;
+			}
+		}
+		return true;
+	}
+
+	public T[] toArray() {
+		return this.arr;
+	}
+
+	public void clear() {
+		for (int i = 0; i < this.capacity; i++) {
+			this.arr[i] = null;
+		}
+	}
+
+	public MyList<T> subList(int start, int finish) {
+		MyList<T> newArr = new MyList<>();
+		for (int i = start; i <= finish; i++) {
+			newArr.arr[i] = this.arr[i];
+		}
+		return newArr;
+	}
+
+	public boolean contains(T data) {
+		for (T i : this.arr) {
+			if (i != null) {
+				if (i.equals(data)) {
+					return true;
+				}
+			}
+		}
+		return false;
 	}
 
 }
