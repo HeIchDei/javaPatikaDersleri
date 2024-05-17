@@ -41,11 +41,45 @@ public class MyList<T> {
 	}
 
 	public void add(T data) {
-		if (this.cursor > this.capacity-1) {
-			setCapacity(this.capacity*2);
+		if (this.cursor > this.capacity - 1) {
+			setCapacity(this.capacity * 2);
 		}
 		this.arr[this.cursor] = data;
 		this.cursor++;
+	}
+
+	public T get(int index) {
+		if (index > this.capacity) {
+			return null;
+		}
+		return this.arr[index];
+	}
+
+	public void remove(int index) {
+		if (index >= 0 && index <= this.capacity) {
+			for (int i = index + 1; i < this.arr.length; i++) {
+				this.arr[i - 1] = this.arr[i];
+			}
+			this.arr[index] = null;
+		}
+		this.cursor -= 1;
+	}
+
+	public void set(int index, T data) {
+		if (index >= 0 && index <= this.capacity) {
+			this.arr[index] = data;
+		}
+	}
+
+	public String toString() {
+		String str = "[";
+		str += this.arr[0];
+		for (int i = 1; i < capacity; i++) {
+			if (arr[i] != null) {
+				str += "," + this.arr[i];
+			}
+		}
+		return str + "]";
 	}
 
 }
