@@ -2,10 +2,13 @@ package nested;
 
 public class Local {
 
-	public void run(){
-		class Yerel{
+	public void run() {
+
+		// Local class
+		class Yerel {
 			private int a;
-			Yerel(int a){
+
+			Yerel(int a) {
 				this.a = a;
 			}
 
@@ -22,5 +25,7 @@ public class Local {
 		System.out.println("Local run");
 		System.out.println(y.getA());
 	}
+
+
 
 }
